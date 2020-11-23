@@ -4,7 +4,7 @@ from contratos import views
 from .views import listaDeContratos, criaContrato
 
 urlpatterns =[
-    path('listaContratos/', listaDeContratos, name='listaDeContratos'),
+    path('listaDeContratos/', listaDeContratos, name='listaDeContratos'),
     path('novo/', criaContrato, name='criaContrato'),
     #path('editar/<int:id>/', editaContrato, name='editaContrato'),
     #path('deletar/<int:id>/', deletaContrato, name='deletaContrato')
