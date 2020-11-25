@@ -1,12 +1,12 @@
 from django.urls import path
 
 from contratos import views
-from .views import listaDeContratos, criaContrato
+from .views import listaDeContratos, criaContrato, editaContrato
 
 urlpatterns =[
     path('listaDeContratos/', listaDeContratos, name='listaDeContratos'),
     path('novo/', criaContrato, name='criaContrato'),
-    #path('editar/<int:id>/', editaContrato, name='editaContrato'),
+    path('editar/<int:id>/', editaContrato, name='editaContrato'),
     #path('deletar/<int:id>/', deletaContrato, name='deletaContrato')
 
     path('ajax/listaDeClientes/', views.listaDeClientes, name='ajax_listaDeClientes'),
