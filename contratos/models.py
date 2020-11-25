@@ -14,9 +14,8 @@ class Contrato(models.Model):
     # Dropdown com listagem de clientes
     cliente = models.ForeignKey(Cliente, on_delete=models.SET_NULL, null=True)
 
-    valorContrato = models.FloatField(max_length=45, null=True, blank=True)
-    valorGasto = models.FloatField(max_length=45, null=True, blank=True)
-    profit = models.FloatField(max_length=45, null=True, blank=True)
+    valorContrato = models.FloatField(max_length=45, null=True, blank=True, default=0)
+    valorGasto = models.FloatField(max_length=45, null=True, blank=True, default=0)
 
 
     dataContrato = models.DateField(null=True, blank=True)

@@ -15,7 +15,6 @@
 
             {% block content %}
 
-
             <form method="POST" id="contratoForm" clientes-url="{% url 'ajax_listaDeClientes' %}" novalidate>
                 <div class="container">
                     {% csrf_token %}
@@ -24,10 +23,12 @@
                     <a href="{% url 'listaDeContratos' %}"><button type="submit" class="btn btn-danger">Cancelar</button></a>
                 </div>
             </form>
+
         </div>
 
-
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
         <script>
             $("#id_country").change(function () {
               var url = $("#contratoForm").attr("clientes-url");
@@ -44,9 +45,19 @@
               });
 
             });
+
         </script>
 
-
+        <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script>
         {% endblock %}
 
     </div>

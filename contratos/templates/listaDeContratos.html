@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body class="p-3 mb-2 bg-dark text-white">
+{% load mathfilters %}
+
     <br><br>
 
     <div class="container p-3 mb-2 bg-light text-dark rounded">
@@ -23,6 +25,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Contrato</th>
                     <th scope="col">Cliente</th>
+                    <th scope="col">Profit</th>
                 </tr>
                 </thead>
 
@@ -30,8 +33,28 @@
 
                 <tr>
                     <th scope="row">{{ contrato.id }}</th>
-                    <td><a href="{%url 'editaContrato' contrato.id %}"> {{ contrato.nome |title }} </a></td>
-                    <td><a href="{%url 'editaCliente' contrato.cliente.id %}"> {{ contrato.cliente |title }} </a></td>
+
+                    <td><a href="{%url 'editaContrato' contrato.id %}" class="text-success"> {{ contrato.nome |title }} </a></td>
+                    <td><a href="{%url 'editaCliente' contrato.cliente.id %}" class="text-success"> {{ contrato.cliente |title }} </a></td>
+
+
+                    {% if contrato.valorContrato|sub:contrato.valorGasto > 0 %}
+                    <td class="font-weight-bold text-success">
+                        R$ {{contrato.valorContrato|sub:contrato.valorGasto}}
+                    </td>
+                    {% elif contrato.valorContrato|sub:contrato.valorGasto == 0 %}
+                    <td class="font-weight-bold text-secondary">
+                        R$ {{contrato.valorContrato|sub:contrato.valorGasto}}
+                    </td>
+                    {% elif contrato.valorContrato|sub:contrato.valorGasto < 0 %}
+                    <td class="font-weight-bold text-danger">
+                        R$ {{contrato.valorContrato|sub:contrato.valorGasto}}
+                    </td>
+                    {% else %}
+                    <td class="text-secondary">
+                        -
+                    </td>
+                    {% endif %}
                 </tr>
 
                 {% endfor %}

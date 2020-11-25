@@ -25,7 +25,7 @@ def listaDeClientes(request):
 @login_required
 def criaContrato(request):
     model = Contrato
-    fields = ('nome', 'bioContrato', 'cliente', 'valorContrato', 'valorGasto', 'profit', 'dataContrato', 'dataEntrega', 'arquivos')
+    fields = ('nome', 'bioContrato', 'cliente', 'valorContrato', 'valorGasto', 'dataContrato', 'dataEntrega', 'arquivos')
     form = ContratoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
@@ -44,3 +44,5 @@ def editaContrato(request, id):
         form.save()
         return redirect('listaDeContratos')
     return render(request, 'contrato_Form.html', {'form': form})
+
+

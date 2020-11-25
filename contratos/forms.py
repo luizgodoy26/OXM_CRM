@@ -9,20 +9,19 @@ class ContratoForm(forms.ModelForm):
     # O meta copia o modelo de form a ser implementado
     class Meta:
         model = Contrato
-        # Defino os campos que estarão presentes no form
-        fields = ('nome', 'bioContrato', 'cliente', 'valorContrato', 'valorGasto', 'profit', 'dataContrato', 'dataEntrega', 'arquivos')
 
-        # def __init__(self, *args, **kwargs):
-        #     super(ContratoForm, self).__init__(*args, **kwargs)
-        #     self.fields['valorContrato'].label = "Valor do Contrato"
+        # Defino os campos que estarão presentes no form
+        fields = ('nome', 'bioContrato', 'cliente', 'valorContrato', 'valorGasto', 'dataContrato', 'dataEntrega', 'arquivos')
+
+
         labels = {
             'bioContrato': _('Detalhes do Contrato'),
             'valorGasto': _('Valor gasto no Contrato'),
             'valorContrato': _('Valor do Contrato'),
             'dataContrato': _('Início do contrato'),
             'dataEntrega': _('Entrega da obra'),
-
         }
+
 
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
@@ -38,5 +37,3 @@ class ContratoForm(forms.ModelForm):
                     pass  # Entrada inválida
             elif self.instance.pk:
                 self.fields['cliente'].queryset = self.instance.cliente.nome.order_by('nome')
-
-
