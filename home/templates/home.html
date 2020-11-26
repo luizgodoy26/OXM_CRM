@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-sacale-1.0">
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}imagens_base" />
+</head>
+<body>
+                        <!-- TODO linkar a galeria nas funcionalidades do sistema -->
+                        <!-- TODO adicionar a bio do LEIA MAIS -->
+    <header>
+        <div class="container" style="font-family: Montserrat">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="">OXM</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-lg-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Sobre<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Galeria</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Contatos</a>
+                  </li>
+                </ul>
+
+                <a href="{%url 'login' %}" style="padding-left: 20px">
+                    <button type="button" class="btn btn-warning rounded-pill">Login</button>
+                </a>
+              </div>
+
+
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container" style="font-family:Calibri">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>OXM</h2>
+                    <p>OXM é um sistema básico de gestão de clientes que tem a finalidade de auxiliar meus pais na gestão de seus negócios.</p>
+                    <p>Focado em uma usabilidade simples e fluida, suprindo algumas necessidades principais como:</p>
+                    <ul>
+                        <a href="" class="text-dark"><li>Gestão de contratos</li></a>
+                        <a href="" class="text-dark"><li>Controle de documentação</li></a>
+                        <a href="" class="text-dark"><li>Controle de agenda</li></a>
+                    </ul>
+                    <a href="#"><button class="btn btn-warning">LEIA MAIS</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous">
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous">
+
+    </script>
+
+</body>
+</html>

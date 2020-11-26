@@ -45,4 +45,16 @@ def editaContrato(request, id):
         return redirect('listaDeContratos')
     return render(request, 'contrato_Form.html', {'form': form})
 
+@login_required
+def deletaContrato(request, id):
+    contrato = get_object_or_404(Contrato, pk=id)
+    form_class = ContratoForm
+    form = ContratoForm(request.POST or None, request.FILES or None, instance=contrato)
+
+
+    if request.method == 'POST':
+        contrato.delete()
+        return redirect('listaDeContratos')
+    return render(request, 'confirma_Delecao_Contrato.html', {'contrato': contrato})
+
 

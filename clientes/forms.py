@@ -9,11 +9,10 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         # Defino os campos que estarão presentes no form
-        fields = ('nome', 'codigo', 'identificador', 'email', 'telefone', 'foto')
+        fields = ('nome', 'identificador', 'email', 'telefone', 'foto')
 
         widgets = {
             'nome': forms.TextInput(attrs={'class': 'form-control'}),
-            'codigo': forms.NumberInput(attrs={'class': 'form-control'}),
             'identificador': forms.NumberInput(attrs={'class': 'form-control'}),
             'email': forms.TextInput(attrs={'class': 'form-control'}),
             'telefone': forms.NumberInput(attrs={'class': 'form-control'}),
