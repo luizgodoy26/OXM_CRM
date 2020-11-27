@@ -20,11 +20,9 @@ class Contrato(models.Model):
 
     dataContrato = models.DateField(null=True, blank=True)
     dataEntrega = models.DateField(null=True, blank=True)
-    # Adiciona data atual do sistema
-    #dataIncusao = models.DateTimeField(editable=False)
 
     arquivos = models.FileField(upload_to='arquivos_contratos', null=True, blank=True)
 
-    #Para que seja exibido o nome do cliente no admin, deve ser feito este método
+
     def __str__(self):
         return self.nome

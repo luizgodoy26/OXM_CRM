@@ -18,7 +18,6 @@ class Pessoa(models.Model):
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=60)
-    codigo = models.IntegerField()
 
     # O null=True, blank=True fazem com que o parâmetro seja opcional
     identificador = models.BigIntegerField(null=True, blank=True)

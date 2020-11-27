@@ -2,6 +2,8 @@
 from django.urls import path
 from .views import listaDeCleintes, criaCliente, editaCliente, deletaCliente
 
+
+
 urlpatterns =[
     path('listaCliente/', listaDeCleintes, name='listaCliente'),
     path('novo/', criaCliente, name='criaCliente'),

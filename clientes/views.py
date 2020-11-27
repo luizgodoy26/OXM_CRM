@@ -41,7 +41,7 @@ def editaCliente(request, id):
     if form.is_valid():
         form.save()
         return redirect('listaCliente')
-    return render(request, 'cliente_formulario.html', {'form': form_class})
+    return render(request, 'cliente_formulario.html', {'form': form})
 
 
 # Delta o cliente com ID equivalente
