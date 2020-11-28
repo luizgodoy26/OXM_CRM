@@ -1,1 +1,0 @@
-web: gunicorn oxm_crm.wsgi
