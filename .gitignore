@@ -7,3 +7,5 @@ venv/
 uploaded_media/
 
 oxm_crm/settings.py
+
+media

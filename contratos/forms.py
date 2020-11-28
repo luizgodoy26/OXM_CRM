@@ -5,14 +5,18 @@ from .models import Contrato
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
 class ContratoForm(forms.ModelForm):
     # O meta copia o modelo de form a ser implementado
     class Meta:
         model = Contrato
+        dataContrato = forms.DateField(widget=DateInput)
+        dataEntrega = forms.DateField(widget=DateInput)
 
         # Defino os campos que estarão presentes no form
         fields = ('nome', 'bioContrato', 'cliente', 'valorContrato', 'valorGasto', 'dataContrato', 'dataEntrega', 'arquivos')
-
 
         labels = {
             'bioContrato': _('Detalhes do Contrato'),
@@ -20,6 +24,10 @@ class ContratoForm(forms.ModelForm):
             'valorContrato': _('Valor do Contrato'),
             'dataContrato': _('Início do contrato'),
             'dataEntrega': _('Entrega da obra'),
+        }
+
+        widgets = {
+            'dataContrato': forms.DateInput(attrs={'id': 'datetimepicker12'})
         }
 
 
@@ -37,3 +45,5 @@ class ContratoForm(forms.ModelForm):
                     pass  # Entrada inválida
             elif self.instance.pk:
                 self.fields['cliente'].queryset = self.instance.cliente.nome.order_by('nome')
+
+
