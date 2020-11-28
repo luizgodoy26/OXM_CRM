@@ -2,10 +2,9 @@
 db.sqlite3
 venv/
 
+.env
 
 .idea/
 uploaded_media/
-
-oxm_crm/settings.py
 
 media
