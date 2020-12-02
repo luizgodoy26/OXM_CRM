@@ -1,1 +1,1 @@
-web: gunicorn oxm_crm.wsgi
+web: gunicorn project.wsgi --log-file-
