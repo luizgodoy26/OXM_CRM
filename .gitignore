@@ -2,7 +2,7 @@
 db.sqlite3
 venv/
 
-.env
+
 .idea/
 uploaded_media/
 

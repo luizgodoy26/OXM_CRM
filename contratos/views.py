@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import ContratoForm
 
+
 @login_required
 def listaDeContratos(request):
     contratos = Contrato.objects.all()
@@ -24,36 +25,9 @@ def listaDeClientes(request):
 @login_required
 def criaContrato(request):
     model = Contrato
-    fields = ('nome', 'bioContrato', 'cliente', 'valorContrato', 'valorGasto', 'dataContrato', 'dataEntrega', 'arquivos')
+    fields = ('nome', 'bioContrato', 'codigo', 'cliente', 'valorContrato', 'valorGasto', 'profit', 'dataContrato', 'dataEntrega', 'arquivos')
     form = ContratoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
         return redirect('listaDeContratos')
     return render(request, 'contrato_Form.html', {'form': form})
-
-
-@login_required
-def editaContrato(request, id):
-    contrato = get_object_or_404(Contrato, pk=id)
-    form_class = ContratoForm
-    form = ContratoForm(request.POST or None, request.FILES or None, instance=contrato)
-
-
-    if form.is_valid():
-        form.save()
-        return redirect('listaDeContratos')
-    return render(request, 'contrato_Form.html', {'form': form})
-
-@login_required
-def deletaContrato(request, id):
-    contrato = get_object_or_404(Contrato, pk=id)
-    form_class = ContratoForm
-    form = ContratoForm(request.POST or None, request.FILES or None, instance=contrato)
-
-
-    if request.method == 'POST':
-        contrato.delete()
-        return redirect('listaDeContratos')
-    return render(request, 'confirma_Delecao_Contrato.html', {'contrato': contrato})
-
-
