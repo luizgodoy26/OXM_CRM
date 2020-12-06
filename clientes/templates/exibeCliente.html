@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente</title>
+</head>
+<body class="bg-dark text-white">
+    <div class="pb-5">{% include 'parts/header.html'%}</div>
+
+    <div class="container mt-5 mb-5 pb-4 bg-light text-dark rounded"><br>
+        <h1 class="text-center text-dark pl-3">{{ cliente.nome|title }}</h1>
+
+        <br>
+        <h3 class="text-dark pl-3">CPF/CNPJ</h3>
+        <h5 class="text-dark pl-3">
+            {% if cliente.identificador %}
+                {{ cliente.identificador }}
+            {% else %}
+                Nenhum dado cadastrado!
+            {% endif %}
+        </h5>
+
+        <br>
+        <h3 class="text-dark pl-3">E-mail</h3>
+        <h5 class="text-dark pl-3">
+            {% if cliente.email %}
+                {{ cliente.email }}
+            {% else %}
+                Nenhum e-mail cadastrado!
+            {% endif %}
+        </h5>
+
+        <br>
+        <h3 class="text-dark pl-3">Telefone</h3>
+        <h5 class="text-dark pl-3">
+            {% if cliente.telefone %}
+                {{ cliente.telefone }}
+            {% else %}
+                Nenhum telefone cadastrado!
+            {% endif %}
+        </h5>
+
+        <br>
+        <h3 class="text-dark pl-3">Foto</h3>
+        <h5 class="text-dark pl-3">
+            {% if cliente.foto %}
+                {{ cliente.foto }}
+            {% else %}
+                Nenhum documento cadastrado!
+            {% endif %}
+        </h5>
+    </div>
+
+</body>
+</html>

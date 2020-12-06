@@ -4,6 +4,13 @@ from .forms import ClienteForm
 from django.contrib.auth.decorators import login_required
 
 
+# Exibe dados do cliente
+@login_required
+def exibeCliente(request, id):
+    cliente = get_object_or_404(Cliente, pk=id)
+    return render(request, 'exibeCliente.html', {'cliente': cliente})
+
+
 # Exibe os clientes cadastrados
 @login_required
 def listaDeCleintes(request):
@@ -41,7 +48,7 @@ def editaCliente(request, id):
     if form.is_valid():
         form.save()
         return redirect('listaCliente')
-    return render(request, 'cliente_formulario.html', {'form': form})
+    return render(request, 'cliente_formulario.html', {'form': form})\
 
 
 # Delta o cliente com ID equivalente

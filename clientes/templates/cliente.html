@@ -32,7 +32,7 @@
                 {% for cliente in clientes %}
                     <tr>
                         <th scope="row">{{ cliente.id }}</th>
-                        <td><a href="{%url 'editaCliente' cliente.id %}" class="text-white">{{ cliente.nome|title}}</a></td>
+                        <td><a href="{%url 'exibeCliente' cliente.id %}" class="text-white">{{ cliente.nome|title}}</a></td>
 
                         <td>
                             {% if cliente.email %}
