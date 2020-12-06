@@ -96,7 +96,13 @@
                 </a>
             </div>
         {% else %}
-            <h2>Nenhum contato para exibir!</h2>
+            <h2 class="p-3">Nenhum contato para exibir!</h2>
+            <br>
+            <div class="text-center">
+                    <a href="{% url 'criaContrato'%}" class="text-light">
+                        <button type="button" class="btn btn-success btn-lg rounded-pill">Adicionar um novo contrato</button>
+                    </a>
+            </div>
         {% endif %}
     </div>
 
