@@ -9,6 +9,13 @@ from .forms import ContratoForm
 @login_required
 def listaDeContratos(request):
     contratos = Contrato.objects.all()
+    filtro = request.GET.get('filtraContrato', None)
+
+    if filtro:
+        contratos = Contrato.objects.all()
+        contratos = contratos.filter(nome__icontains=filtro)
+    else:
+        clientes = Contrato.objects.all()
 
     return render(request, 'listaDeContratos.html', {'contratos': contratos})
 

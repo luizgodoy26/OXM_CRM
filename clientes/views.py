@@ -4,19 +4,18 @@ from .forms import ClienteForm
 from django.contrib.auth.decorators import login_required
 
 
-# Exibe dados do cliente
-@login_required
-def exibeCliente(request, id):
-    cliente = get_object_or_404(Cliente, pk=id)
-    return render(request, 'exibeCliente.html', {'cliente': cliente})
-
-
 # Exibe os clientes cadastrados
 @login_required
 def listaDeCleintes(request):
     # O manager objects permite que sejam procurados objetos de diversas formas
-    # A função all() retorna todos os objetos da classe cleinte
-    clientes = Cliente.objects.all()
+    filtro = request.GET.get('filtraCliente', None)
+
+    if filtro:
+        clientes = Cliente.objects.all()
+        clientes = clientes.filter(nome__icontains=filtro)
+    else:
+        # A função all() retorna todos os objetos da classe cleinte
+        clientes = Cliente.objects.all()
 
     return render(request, 'cliente.html', {'clientes': clientes})
 
@@ -48,7 +47,7 @@ def editaCliente(request, id):
     if form.is_valid():
         form.save()
         return redirect('listaCliente')
-    return render(request, 'cliente_formulario.html', {'form': form})\
+    return render(request, 'cliente_formulario.html', {'form': form})
 
 
 # Delta o cliente com ID equivalente
@@ -65,4 +64,3 @@ def deletaCliente(request, id):
 
     else:
         return render(request, 'confima_delecao_cliente.html', {'cliente': cliente})
-
