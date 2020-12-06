@@ -5,3 +5,6 @@ venv/
 .env
 .idea/
 uploaded_media/
+
+media/
+fotos_clientes/

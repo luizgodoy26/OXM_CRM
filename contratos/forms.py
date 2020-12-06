@@ -27,7 +27,8 @@ class ContratoForm(forms.ModelForm):
         }
 
         widgets = {
-            'dataContrato': forms.DateInput(attrs={'id': 'datetimepicker12'})
+            'dataEntrega': forms.DateInput(attrs={'id': 'datepicker2'}),
+            'dataContrato': forms.DateInput(attrs={'id': 'datepicker'})
         }
 
 
@@ -45,5 +46,3 @@ class ContratoForm(forms.ModelForm):
                     pass  # Entrada inválida
             elif self.instance.pk:
                 self.fields['cliente'].queryset = self.instance.cliente.nome.order_by('nome')
-
-
