@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'contratos',
     'bootstrapform',
     'mathfilters',
+    'dashboard',
     'home',
 ]
 

@@ -15,7 +15,7 @@ def listaDeContratos(request):
         contratos = Contrato.objects.all()
         contratos = contratos.filter(nome__icontains=filtro)
     else:
-        clientes = Contrato.objects.all()
+        contratos = Contrato.objects.all()
 
     return render(request, 'listaDeContratos.html', {'contratos': contratos})
 
@@ -50,6 +50,7 @@ def editaContrato(request, id):
         form.save()
         return redirect('listaDeContratos')
     return render(request, 'contrato_Form.html', {'form': form})
+
 
 @login_required
 def deletaContrato(request, id):

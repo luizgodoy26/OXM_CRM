@@ -1,10 +1,6 @@
-from datetime import timezone
 
-from django.contrib.auth.models import User
 from django.db import models
-from django.utils.timezone import activate
 from clientes.models import Cliente
-from oxm_crm import settings
 
 
 class Contrato(models.Model):
