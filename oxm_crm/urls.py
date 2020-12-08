@@ -1,3 +1,4 @@
+from django.conf.urls import handler404
 from django.contrib import admin
 from django.urls import path, include
 from clientes import urls as clientes_urls
@@ -23,3 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = 'views.custom_404'
+handler500 = 'views.custom_500'

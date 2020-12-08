@@ -13,6 +13,7 @@
 </head>
 <body class="bg-dark text-white">
     {% load bootstrap %}
+    {% load humanize %}
     <div class="pb-5">{% include 'parts/header.html'%}</div>
     <div class="p-3 mt-5 mb-2 bg-dark text-white">
 
@@ -25,13 +26,13 @@
                 <h4 class="text-center"><i class="fas fa-file-signature"></i> Contratos: {{ listaContratos.count }}</h4>
             </div>
             <div class="p-3 m-2 bg-danger text-white rounded col-sm">
-              <h4 class="text-center"><i class="fas fa-window-close"></i> R$ {{ gastoTotal }}</h4>
+              <h4 class="text-center"><i class="fas fa-window-close"></i> R$ {{ gastoTotal|floatformat:2|intcomma }}</h4>
             </div>
             <div class="p-3 m-2 bg-success text-white rounded col-sm">
-              <h4 class="text-center"><i class="fas fa-dollar-sign"></i> R$ {{ recebimentoTotal }}</h4>
+              <h4 class="text-center"><i class="fas fa-dollar-sign"></i> R$ {{ recebimentoTotal|floatformat:2|intcomma }}</h4>
             </div>
             <div class="p-3 m-2 bg-warning text-dark rounded col-sm">
-              <h4 class="text-center"><i class="fas fa-coins"></i> R$ {{ profit }}</h4>
+              <h4 class="text-center"><i class="fas fa-coins"></i> R$ {{ profit|floatformat:2|intcomma }}</h4>
             </div>
 
           </div>
