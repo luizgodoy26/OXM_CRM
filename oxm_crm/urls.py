@@ -3,6 +3,7 @@ from django.urls import path, include
 from clientes import urls as clientes_urls
 from contratos import urls as contratos_urls
 from dashboard import urls as dashboard_urls
+from usuarios import urls as usuarios_urls
 from home import urls as home_urls
 from django.conf import settings
 from django.conf.urls.static import static
@@ -16,6 +17,8 @@ urlpatterns = [
     path('clientes/', include(clientes_urls)),
     path('contratos/', include(contratos_urls)),
     path('dashboard/', include(dashboard_urls)),
+
+    path('registrar/', include(usuarios_urls)),
 
     path('login/', LoginView.as_view(), name="login"),
     path('logout/', LogoutView.as_view(), name='logout'),

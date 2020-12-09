@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'clientes',
     'contratos',
+    'usuarios',
     'bootstrapform',
     'mathfilters',
     'dashboard',
