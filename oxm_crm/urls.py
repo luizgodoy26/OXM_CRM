@@ -18,8 +18,6 @@ urlpatterns = [
     path('contratos/', include(contratos_urls)),
     path('dashboard/', include(dashboard_urls)),
 
-    path('registrar/', include(usuarios_urls)),
-
     path('login/', LoginView.as_view(), name="login"),
     path('logout/', LogoutView.as_view(), name='logout'),
 
