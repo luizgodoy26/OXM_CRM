@@ -19,20 +19,35 @@
 
         <div class="container">
           <div class="row">
-            <div class="p-3 m-2 bg-secondary text-white rounded col-sm">
-                <h4 class="text-center"><i class="fas fa-user mr-2"></i>Clientes: {{ listaClientes.count }}</h4>
+            <div class="col-sm">
+                <label for="div" class="pl-3 font-weight-bold">Cadastros</label>
+                <div class="p-3 mx-2 bg-secondary text-white rounded shadow p-3 mb-5">
+                    <h5 class="text-center"><i class="fas fa-user mr-2"></i>Clientes: {{ listaClientes.count }}</h5>
+                </div>
             </div>
-            <div class="p-3 m-2 bg-secondary text-white rounded col-sm">
-                <h4 class="text-center"><i class="fas fa-file-signature"></i> Contratos: {{ listaContratos.count }}</h4>
+            <div class="col-sm">
+                <label for="div" class="pl-3 font-weight-bold">Cadastros</label>
+                <div class="p-3 mx-2 bg-secondary text-white rounded shadow p-3 mb-5">
+                <h5 class="text-center"><i class="fas fa-file-signature"></i> Contratos: {{ listaContratos.count }}</h5>
+                </div>
             </div>
-            <div class="p-3 m-2 bg-danger text-white rounded col-sm">
-              <h4 class="text-center"><i class="fas fa-window-close"></i> R$ {{ gastoTotal|floatformat:2|intcomma }}</h4>
+            <div class="col-sm">
+                <label for="div" class="pl-3 font-weight-bold">Gastos</label>
+                <div class="p-3 mx-2 bg-danger text-white rounded shadow p-3 mb-5">
+              <h5 class="text-center"><i class="fas fa-window-close"></i> R$ {{ gastoTotal|floatformat:2|intcomma }}</h5>
+                </div>
             </div>
-            <div class="p-3 m-2 bg-success text-white rounded col-sm">
-              <h4 class="text-center"><i class="fas fa-dollar-sign"></i> R$ {{ recebimentoTotal|floatformat:2|intcomma }}</h4>
+            <div class="col-sm">
+                <label for="div" class="pl-3 font-weight-bold">Recebimentos</label>
+                <div class="p-3 mx-2 bg-info text-white rounded shadow p-3 mb-5">
+              <h5 class="text-center"><i class="fas fa-dollar-sign"></i> R$ {{ recebimentoTotal|floatformat:2|intcomma }}</h5>
+                </div>
             </div>
-            <div class="p-3 m-2 bg-warning text-dark rounded col-sm">
-              <h4 class="text-center"><i class="fas fa-coins"></i> R$ {{ profit|floatformat:2|intcomma }}</h4>
+            <div class="col-sm">
+                <label for="div" class="pl-3 font-weight-bold">Profit</label>
+                <div class="p-3 mx-2 bg-success text-white rounded shadow p-3 mb-5">
+              <h5 class="text-center"><i class="fas fa-coins"></i> R$ {{ profit|floatformat:2|intcomma }}</h5>
+                </div>
             </div>
 
           </div>

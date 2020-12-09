@@ -124,7 +124,7 @@ MEDIA_ROOT = 'media'
 
 LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = 'listaCliente'
+LOGIN_REDIRECT_URL = 'exibeDashboard'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
