@@ -47,13 +47,6 @@ header{
     font-size: 1.2em;
 }
 
-.btn:hover:after btn-success:hover:after{
-    content: 'Add';
-}
-.btn:hover btn-success:hover:{
-    content: 'teste';
-}
-
 
 .deepshd {
   color: #e0dfdc;
