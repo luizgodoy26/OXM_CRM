@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 # Exibe os clientes cadastrados
 @login_required
 def listaDeCleintes(request):
-    # O manager objects permite que sejam procurados objetos de diversas formas
     filtro = request.GET.get('filtraCliente', None)
 
     if filtro:
